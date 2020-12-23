@@ -54,3 +54,5 @@
     Because HTTP normally uses TCP as the transport layer protocol. The HTTP client needs to establish the TCP connection first.
 
 1. What happens when I visit a web page in the browser?
+
+1. What is HTTP 1.1, HTTP2 and HTTP3?

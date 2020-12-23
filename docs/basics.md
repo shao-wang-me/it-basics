@@ -14,3 +14,5 @@ Focus on theories, concepts and engineering practices. Specific tools are only d
 10. Statistics
 11. Machine Learning
 12. Artificial Intelligence
+13. Natural Language Processing
+14. Architecture

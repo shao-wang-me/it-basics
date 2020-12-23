@@ -2,9 +2,11 @@
 
 Basics for an IT student or early career professional.
 
+Some terms are marked with their Chinese name.
+
 ## Road Map
 
-Aside from the actual content in [`pages/`](pages/), convert them to HTML pages.
+Aside from the actual content in [`docs/`](docs), convert them to HTML pages.
 
 ### Three steps:
 
@@ -14,7 +16,7 @@ Aside from the actual content in [`pages/`](pages/), convert them to HTML pages.
 
 ### Possible tools:
 
-Whichever tool is used, the Markdown files in [`pages/`](pages/) shouldn't have to cater for the tool, they must remain in the simplest form.
+Whichever tool is used, the Markdown files in [`docs/`](docs) shouldn't have to cater for the tool, they must remain in the simplest form.
 
 1. Pandoc
 
