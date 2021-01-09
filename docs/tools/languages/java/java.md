@@ -39,3 +39,7 @@
 1. What is annotation?
 
 1. What is reflection?
+
+1. Can I use Java 11's JDK to compile for code that was written for Java 8 and run it with a Java 8 JVM?
+
+1. Does Java have module? What is the difference between a module and a package in the context of Java?
