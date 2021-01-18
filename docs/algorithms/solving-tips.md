@@ -30,11 +30,18 @@
 
    For all integers?
 
-   ```python
-   from math import floor, log10
-   def number_of_digits(n):
-     if n == 0:
+   ```
+   function number_of_digits(n):
+     if n = 0:
        return 1
      else:
        return floor(log10(abs(n))) + 1
    ```
+
+1. When using two pointer technique, what would the index of the number we need to fill given the pointers' indices as `l` and `r`, if we are filling numbers from the start or from the end respectively?
+
+   **Forward:** It would be `n - 1 + l - r` because there are `l + (n - 1 - r) = n - 1 + l - r` numbers already filled, and the next number is at index `n - 1 + l - r`.
+
+   **Backward:** It would be `r - l` because there are `r - l + 1` numbers waiting to be filled and the `r - l + 1`th number is at index `r - l`.
+
+   You can use a variable to track it if you don't remember.
