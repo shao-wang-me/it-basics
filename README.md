@@ -20,22 +20,26 @@ Whichever tool is used, the Markdown files in [`docs/`](docs) shouldn't have to 
 
 1. Pandoc
 
-    Convert each Markdown file to a standalone HTML file.
+   Convert each Markdown file to a standalone HTML file.
 
-    Pandoc is also able to generate PDFs via Latex, although HTML and PDF generation might use different tools.
+   Pandoc is also able to generate PDFs via Latex, although HTML and PDF generation might use different tools.
 
-    - `--toc/--table-of-contents` generates a table of content.
-    - `--template` uses a template.
-    - `-H/--include-before-body` includes the content of a file at the end of `<head>`.
-    - `-B/--include-before-body` includes the content of a file at the beginning of `<body>`.
-    - `-A/--include-after-body` includes the content of a file at the end of `<body>`.
-    - `-c/--css`: links to a CSS.
+   - `--toc/--table-of-contents` generates a table of content.
+   - `--template` uses a template.
+   - `-H/--include-before-body` includes the content of a file at the end of `<head>`.
+   - `-B/--include-before-body` includes the content of a file at the beginning of `<body>`.
+   - `-A/--include-after-body` includes the content of a file at the end of `<body>`.
+   - `-c/--css`: links to a CSS.
 
-2. ReactDOMServer and a Markdown converter
+1. ReactDOMServer and a Markdown converter
 
-    [`ReactDOMServer.renderToStaticMarkup()`](https://reactjs.org/docs/react-dom-server.html#rendertostaticmarkup) renders a React element to a static HTML string. It runs in Node.js environment and doesn't any client side scripting.
+   [`ReactDOMServer.renderToStaticMarkup()`](https://reactjs.org/docs/react-dom-server.html#rendertostaticmarkup) renders a React element to a static HTML string. It runs in Node.js environment and doesn't any client side scripting.
 
-    Gatsby uses `ReactDOMServer` to generate static HTML as well, except that it uses `ReactDOMServer.renderToString()` at build-time and with `ReactDOM.hydrate()` at client run-time.
+   Gatsby uses `ReactDOMServer` to generate static HTML as well, except that it uses `ReactDOMServer.renderToString()` at build-time and with `ReactDOM.hydrate()` at client run-time.
+
+1. Jekyll
+
+   If served on GitHub Pages, you do not have to commit and push the build. So local build is not necessary. Although you are limited to these gems: <https://pages.github.com/versions/>.
 
 ---
 
