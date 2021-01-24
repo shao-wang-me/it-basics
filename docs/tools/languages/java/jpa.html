@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>jpa</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="/it-basics">Home</a>
+        <a href="https://github.com/shao-wang-me">Me</a>
+    </nav>
+</header>
+<h1 id="java-persistence-api-jpa">Java Persistence API (JPA)</h1>
+<ol type="1">
+<li><p>What is JPA?</p>
+<p>JPA is a part of Jakarta EE (formerly Java EE, EE stands for Enterprise Edition). It provides ORM (object-relational mapping).</p></li>
+<li><p>What ways of query does JPA have?</p>
+<ol type="1">
+<li>JPQL (Java Persistence Querying Language): similar to SQL.</li>
+<li>Criteria API: no embedded language, similar to Django’s model layer.</li>
+<li>Native SQL</li>
+</ol>
+<p>It supports many other ways of query.</p></li>
+<li><p>Where is the API?</p>
+<p>The API is in package <code>javax.persistence</code>;</p></li>
+<li><p>What are JPA providers?</p>
+<p>Just like JDBC, Java only provides a set of interface, the actual work is done by providers. In JDBC, the API is in <code>java.sql</code>, and the actual providers are JDBC drivers provided by database vendors or third-parties. Some notable JPA providers: EclipseLink, Hibernate and OpenJPA, etc.</p></li>
+</ol>
+</body>
+</html>

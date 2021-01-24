@@ -1,6 +1,6 @@
 # IT Basics
 
-Focus on theories, concepts and engineering practices. Specific tools are only discussed to help illustration.
+Focus on theories, concepts and engineering practices.
 
 1. Algorithms
 2. Computer Networks
