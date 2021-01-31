@@ -4,13 +4,149 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>index</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <title>IT 基础</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header>
@@ -19,87 +155,90 @@
         <a href="https://github.com/shao-wang-me">Me</a>
     </nav>
 </header>
+<header id="title-block-header">
+<h1 class="title">IT 基础</h1>
+</header>
 <ul>
 <li>architecture
 <ul>
 <li><a href="architecture/event-driven.html">event-driven</a></li>
 </ul></li>
-<li><a href="basics.html">basics</a></li>
 <li>databases
 <ul>
 <li><a href="databases/databases.html">databases</a></li>
-</ul></li>
-<li>networks
-<ul>
-<li><a href="networks/DNS.html">DNS</a></li>
-<li><a href="networks/HTTP.html">HTTP</a></li>
-<li><a href="networks/IP.html">IP</a></li>
-<li><a href="networks/OSI.html">OSI</a></li>
-<li><a href="networks/Proxy.html">Proxy</a></li>
-<li><a href="networks/TCP.html">TCP</a></li>
-<li><a href="networks/UDP.html">UDP</a></li>
 </ul></li>
 <li>parallel
 <ul>
 <li><a href="parallel/parallel.html">parallel</a></li>
 </ul></li>
-<li>stream
+<li><a href="基础.html">基础</a></li>
+<li>工具
 <ul>
-<li><a href="stream/stream.html">stream</a></li>
+<li>数据库
+<ul>
+<li><a href="工具/数据库/Redis.html">Redis</a></li>
 </ul></li>
-<li>tools
+<li>杂项
 <ul>
-<li>databases
-<ul>
-<li><a href="tools/databases/redis.html">redis</a></li>
-</ul></li>
-<li>languages
-<ul>
-<li>java
-<ul>
-<li><a href="tools/languages/java/java.html">java</a></li>
-<li><a href="tools/languages/java/jpa.html">jpa</a></li>
-<li><a href="tools/languages/java/jsf.html">jsf</a></li>
-<li><a href="tools/languages/java/maven.html">maven</a></li>
-</ul></li>
-<li>javascript
-<ul>
-<li><a href="tools/languages/javascript/npm.html">npm</a></li>
-<li><a href="tools/languages/javascript/react.html">react</a></li>
-</ul></li>
-<li>xml
-<ul>
-<li><a href="tools/languages/xml/xml.html">xml</a></li>
-</ul></li>
-</ul></li>
-<li>miscellaneous
-<ul>
-<li><a href="tools/miscellaneous/git.html">git</a></li>
+<li><a href="工具/杂项/git.html">git</a></li>
 <li>static-site-generators
 <ul>
-<li><a href="tools/miscellaneous/static-site-generators/jekyll.html">jekyll</a></li>
+<li><a href="工具/杂项/static-site-generators/jekyll.html">jekyll</a></li>
 </ul></li>
 </ul></li>
-<li>stream
+<li>流
 <ul>
 <li>flink
 <ul>
-<li><a href="tools/stream/flink/flink.html">flink</a></li>
+<li><a href="工具/流/flink/flink.html">flink</a></li>
 </ul></li>
 </ul></li>
+<li>语言
+<ul>
+<li>java
+<ul>
+<li><a href="工具/语言/java/java.html">java</a></li>
+<li><a href="工具/语言/java/jpa.html">jpa</a></li>
+<li><a href="工具/语言/java/jsf.html">jsf</a></li>
+<li><a href="工具/语言/java/maven.html">maven</a></li>
+</ul></li>
+<li>javascript
+<ul>
+<li><a href="工具/语言/javascript/npm.html">npm</a></li>
+<li><a href="工具/语言/javascript/react.html">react</a></li>
+</ul></li>
+<li>xml
+<ul>
+<li><a href="工具/语言/xml/xml.html">xml</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>流
+<ul>
+<li><a href="流/流.html">流</a></li>
 </ul></li>
 <li>算法
 <ul>
-<li><a href="算法/algorithms.html">algorithms</a></li>
-<li><a href="算法/leetcode.html">leetcode</a></li>
-<li><a href="算法/math.html">math</a></li>
-<li><a href="算法/solving-tips.html">solving-tips</a></li>
+<li><a href="算法/LC刷题.html">LC刷题</a></li>
+<li><a href="算法/技巧.html">技巧</a></li>
+<li><a href="算法/数学.html">数学</a></li>
 <li>数据结构
 <ul>
 <li>trees</li>
 <li><a href="算法/数据结构/数组.html">数组</a></li>
 <li><a href="算法/数据结构/链表.html">链表</a></li>
 </ul></li>
+<li><a href="算法/算法.html">算法</a></li>
+</ul></li>
+<li>网络
+<ul>
+<li><a href="网络/DNS.html">DNS</a></li>
+<li><a href="网络/HTTP.html">HTTP</a></li>
+<li><a href="网络/IP.html">IP</a></li>
+<li><a href="网络/OSI.html">OSI</a></li>
+<li><a href="网络/Proxy.html">Proxy</a></li>
+<li><a href="网络/TCP.html">TCP</a></li>
+<li><a href="网络/UDP.html">UDP</a></li>
 </ul></li>
 </ul>
 </body>

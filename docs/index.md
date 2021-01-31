@@ -1,47 +1,49 @@
+# IT 基础
+
 - architecture
   - [event-driven](architecture/event-driven.html)
-- [basics](basics.html)
 - databases
   - [databases](databases/databases.html)
-- networks
-  - [DNS](networks/DNS.html)
-  - [HTTP](networks/HTTP.html)
-  - [IP](networks/IP.html)
-  - [OSI](networks/OSI.html)
-  - [Proxy](networks/Proxy.html)
-  - [TCP](networks/TCP.html)
-  - [UDP](networks/UDP.html)
 - parallel
   - [parallel](parallel/parallel.html)
-- stream
-  - [stream](stream/stream.html)
-- tools
-  - databases
-    - [redis](tools/databases/redis.html)
-  - languages
-    - java
-      - [java](tools/languages/java/java.html)
-      - [jpa](tools/languages/java/jpa.html)
-      - [jsf](tools/languages/java/jsf.html)
-      - [maven](tools/languages/java/maven.html)
-    - javascript
-      - [npm](tools/languages/javascript/npm.html)
-      - [react](tools/languages/javascript/react.html)
-    - xml
-      - [xml](tools/languages/xml/xml.html)
-  - miscellaneous
-    - [git](tools/miscellaneous/git.html)
+- [基础](基础.html)
+- 工具
+  - 数据库
+    - [Redis](工具/数据库/Redis.html)
+  - 杂项
+    - [git](工具/杂项/git.html)
     - static-site-generators
-      - [jekyll](tools/miscellaneous/static-site-generators/jekyll.html)
-  - stream
+      - [jekyll](工具/杂项/static-site-generators/jekyll.html)
+  - 流
     - flink
-      - [flink](tools/stream/flink/flink.html)
+      - [flink](工具/流/flink/flink.html)
+  - 语言
+    - java
+      - [java](工具/语言/java/java.html)
+      - [jpa](工具/语言/java/jpa.html)
+      - [jsf](工具/语言/java/jsf.html)
+      - [maven](工具/语言/java/maven.html)
+    - javascript
+      - [npm](工具/语言/javascript/npm.html)
+      - [react](工具/语言/javascript/react.html)
+    - xml
+      - [xml](工具/语言/xml/xml.html)
+- 流
+  - [流](流/流.html)
 - 算法
-  - [algorithms](算法/algorithms.html)
-  - [leetcode](算法/leetcode.html)
-  - [math](算法/math.html)
-  - [solving-tips](算法/solving-tips.html)
+  - [LC刷题](算法/LC刷题.html)
+  - [技巧](算法/技巧.html)
+  - [数学](算法/数学.html)
   - 数据结构
     - trees
     - [数组](算法/数据结构/数组.html)
     - [链表](算法/数据结构/链表.html)
+  - [算法](算法/算法.html)
+- 网络
+  - [DNS](网络/DNS.html)
+  - [HTTP](网络/HTTP.html)
+  - [IP](网络/IP.html)
+  - [OSI](网络/OSI.html)
+  - [Proxy](网络/Proxy.html)
+  - [TCP](网络/TCP.html)
+  - [UDP](网络/UDP.html)

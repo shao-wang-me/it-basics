@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Event-driven</title>
+  <title>Maven</title>
   <style>
     html {
       line-height: 1.5;
@@ -156,13 +156,11 @@
     </nav>
 </header>
 <header id="title-block-header">
-<h1 class="title">Event-driven</h1>
+<h1 class="title">Maven</h1>
 </header>
-<p>Reference: https://flink.apache.org/usecases.html#eventDrivenApps</p>
 <ol type="1">
-<li><p>What are event-driven applications?</p>
-<p>An event-driven application is a stateful application that ingest and react to incoming events.</p></li>
-<li><p>What is the difference between event-driven applications and traditional applications?</p></li>
+<li><p>How to skip tests?</p>
+<p>Two ways to skip tests in command line: <code>mvn &lt;command&gt; -DskipTests</code> or <code>mvn &lt;command&gt; -Dmaven.test.skip=true</code>. The second one is recommended as it not only skip the execution but also the compilation of tests.</p></li>
 </ol>
 </body>
 </html>

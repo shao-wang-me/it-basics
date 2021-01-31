@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Event-driven</title>
+  <title>HTTP</title>
   <style>
     html {
       line-height: 1.5;
@@ -156,13 +156,74 @@
     </nav>
 </header>
 <header id="title-block-header">
-<h1 class="title">Event-driven</h1>
+<h1 class="title">HTTP</h1>
 </header>
-<p>Reference: https://flink.apache.org/usecases.html#eventDrivenApps</p>
 <ol type="1">
-<li><p>What are event-driven applications?</p>
-<p>An event-driven application is a stateful application that ingest and react to incoming events.</p></li>
-<li><p>What is the difference between event-driven applications and traditional applications?</p></li>
+<li><p>What is HTTP?</p>
+<p>HTTP stands for HyperText Transfer Protocol, specified in RFC 2616, is a simple request-response application layer protocol.</p></li>
+<li><p>Which transport layer protocol does HTTP use?</p>
+<p>It normally uses TCP but can use any suitable protocol. The protocol should be reliable, meaning it doesn’t lose messages silently (such as UDP).</p></li>
+<li><p>What encoding is used by HTTP?</p>
+<p>The request and response headers are encoded in ASCII.</p>
+<p>TODO: Payload encoding?</p></li>
+<li><p>Which port does HTTP use?</p>
+<p>It can use any port but 80 is the most common port. Web browsers hide the port when it’s 80.</p></li>
+<li><p>What are the common methods in HTTP?</p>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GET</td>
+<td>Get a resource.</td>
+</tr>
+<tr class="even">
+<td>HEAD</td>
+<td>The response will only have the header.</td>
+</tr>
+<tr class="odd">
+<td>POST</td>
+<td>Send some information.</td>
+</tr>
+<tr class="even">
+<td>PUT</td>
+<td>Replace a resource.</td>
+</tr>
+<tr class="odd">
+<td>DELETE</td>
+<td>Delete a resource.</td>
+</tr>
+<tr class="even">
+<td>TRACE</td>
+<td>Echo the incoming request.</td>
+</tr>
+<tr class="odd">
+<td>CONNECT</td>
+<td>CONNECT through a proxy.</td>
+</tr>
+<tr class="even">
+<td>OPTIONS</td>
+<td>Query options for a resource.</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Are methods in HTTP case sensitive?</p>
+<p>Yes.</p></li>
+<li><p>What is the difference between PUT and POST?</p></li>
+<li><p>What is the structure of a HTTP message?</p></li>
+<li><p>How does HTTP connect to the destination machine?</p></li>
+<li><p>Who and what specifies HTTP?</p></li>
+<li><p>What is HTTPS?</p></li>
+<li><p>How does the performance of HTTPS compare to HTTP?</p></li>
+<li><p>How does the performance of HTTP compare to TCP?</p></li>
+<li><p>When I visit a website, why can I see TCP message (segment) in Wireshark?</p>
+<p>Because HTTP normally uses TCP as the transport layer protocol. The HTTP client needs to establish the TCP connection first.</p></li>
+<li><p>What happens when I visit a web page in the browser?</p></li>
+<li><p>What is HTTP 1.1, HTTP2 and HTTP3?</p></li>
 </ol>
 </body>
 </html>
