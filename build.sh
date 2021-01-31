@@ -1,5 +1,10 @@
+# 生成首页目录
 node make_toc.js docs/ docs/index.md
-# Modified from https://gist.github.com/bzerangue/2504041
-find docs/ -name "*.md*" | while read -r i; do pandoc "$i" -o "${i%.*}.html" -B header.html; done
 
-# Might need to clean HTML files if Markdown files are removed
+# 自动删除HTML文件
+find docs/ -name "*.html" -exec rm {} \;
+
+# 改自https://gist.github.com/bzerangue/2504041
+find docs/ -name "*.md*" | while read -r i; do pandoc "$i" -s -o "${i%.*}.html" -B header.html; done
+
+# TODO 自定义CSS

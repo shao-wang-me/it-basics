@@ -3,6 +3,8 @@
 
 const fs = require('fs');
 
+const exclude = ['index'];
+
 // Walk through the dir structure
 // https://stackoverflow.com/a/59042581/7011476
 function walk(dir, rootDir, level = 0) {
@@ -15,7 +17,7 @@ function walk(dir, rootDir, level = 0) {
             toc += walk(fs.opendirSync(dir.path + '/' + entry.name), rootDir, level + 1);
         } else if (entry.isFile && isMD(entry.name)) {
             const name = getName(entry.name);
-            if (name !== 'index') {
+            if (!exclude.includes(name)) {
                 const dirPath = dir.path.slice(rootDir.path.length + 1);
                 // - [name](path/to/name.html)
                 toc += `${'  '.repeat(level)}- [${name}](${(dirPath ? dirPath + '/' : '') + name + '.html'})\n`;
@@ -37,7 +39,7 @@ function isMD(fileName) {
 // Get file name without the extension
 function getName(md) {
     const splits = md.split('.');
-    return splits.slice(0, splits.length - 1);
+    return splits.slice(0, splits.length - 1).join('.');
 }
 
 

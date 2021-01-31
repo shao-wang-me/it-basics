@@ -38,10 +38,14 @@
        return floor(log10(abs(n))) + 1
    ```
 
-1. When using two pointer technique, what would the index of the number we need to fill given the pointers' indices as `l` and `r`, if we are filling numbers from the start or from the end respectively?
+1. When using two pointers, what would the index of the number we need to fill given the pointers' indices as `l` and `r`, if we are filling numbers from the start or from the end respectively?
 
    **Forward:** It would be `n - 1 + l - r` because there are `l + (n - 1 - r) = n - 1 + l - r` numbers already filled, and the next number is at index `n - 1 + l - r`.
 
    **Backward:** It would be `r - l` because there are `r - l + 1` numbers waiting to be filled and the `r - l + 1`th number is at index `r - l`.
 
    You can use a variable to track it if you don't remember.
+
+1. When using two pointers, it is good to maintain a meaning of the pointers. For example, `l` is the next the position to write, `r` is the biggest number when have found so far. It makes the code meaningful and often simpler.
+
+1. When the algorithm needs to manually handle many edge cases, your idea might be wrong.

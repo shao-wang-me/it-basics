@@ -1,16 +1,8 @@
-- algorithms
-  - [algorithms](algorithms/algorithms.html)
-  - data-structures
-    - [array](algorithms/data-structures/array.html)
-    - trees
-  - [leetcode](algorithms/leetcode.html)
-  - [solving-tips](algorithms/solving-tips.html)
 - architecture
   - [event-driven](architecture/event-driven.html)
 - [basics](basics.html)
 - databases
   - [databases](databases/databases.html)
-- [index](index.html)
 - networks
   - [DNS](networks/DNS.html)
   - [HTTP](networks/HTTP.html)
@@ -44,3 +36,12 @@
   - stream
     - flink
       - [flink](tools/stream/flink/flink.html)
+- 算法
+  - [algorithms](算法/algorithms.html)
+  - [leetcode](算法/leetcode.html)
+  - [math](算法/math.html)
+  - [solving-tips](算法/solving-tips.html)
+  - 数据结构
+    - trees
+    - [数组](算法/数据结构/数组.html)
+    - [链表](算法/数据结构/链表.html)

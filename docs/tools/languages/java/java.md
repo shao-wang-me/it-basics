@@ -55,3 +55,7 @@
 1. What can JVM do other than interpreting and executing Java bytecode?
 
 1. What is Java bytecode?
+
+1. Can `int[]` be `null`?
+
+   Yes. `int[] array;  // array ==> null`.
