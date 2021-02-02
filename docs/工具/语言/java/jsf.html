@@ -214,18 +214,15 @@
 <body>
 <header>
     <nav>
-        <a href="/it-basics">Home</a>
+        <a href="/">Home</a>
         <a href="https://github.com/shao-wang-me">Me</a>
     </nav>
 </header>
 <header id="title-block-header">
 <h1 class="title">JSF (Jakarta Server Faces)</h1>
 </header>
+<p>JSF是Jakarta EE（原Java EE）的一部分，是构建组件式的Web UI的specification，也是一个MVC的web框架。</p>
 <ol type="1">
-<li><p>What is JSF?</p></li>
-<li><p>Does JSF use XHTML?</p></li>
-<li><p>Does JSF use Java Bean?</p></li>
-<li><p>How to create a component in JSF?</p></li>
 <li><p>Where can I find references of JSF tags/components?</p>
 <p>For example, given this:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ui:composition</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/1999/xhtml&quot;</span></span>
@@ -237,5 +234,48 @@
 <p><code>p</code> is from PrimeFaces (<a href="https://www.primefaces.org/documentation/" class="uri">https://www.primefaces.org/documentation/</a>), <code>f</code>, <code>ui</code> and <code>h</code> are from JSF (<a href="https://jakarta.ee/specifications/faces/3.0/vdldoc/" class="uri">https://jakarta.ee/specifications/faces/3.0/vdldoc/</a>).</p>
 <p>You can find PrimeFaces demo here: <a href="https://www.primefaces.org/showcase/index.xhtml" class="uri">https://www.primefaces.org/showcase/index.xhtml</a>.</p></li>
 </ol>
+<h1 data-number="1" id="primefaces数据表格惰性加载datatable-lazy-loading"><span class="header-section-number">1</span> PrimeFaces数据表格惰性加载（DataTable Lazy Loading）</h1>
+<p>文档：<a href="https://primefaces.github.io/primefaces/10_0_0/#/components/datatable?id=lazy-loading" class="uri">https://primefaces.github.io/primefaces/10_0_0/#/components/datatable?id=lazy-loading</a><br />
+示例：<a href="https://www.primefaces.org/showcase/ui/data/datatable/lazy.xhtml" class="uri">https://www.primefaces.org/showcase/ui/data/datatable/lazy.xhtml</a></p>
+<p>在服务器端惰性加载数据（比如从数据库），适合大数据集。绑定的数据得是一个LazyDataModel。用这个的话，排序、过滤、分页等都要自己在LazyDataModel中实现了。每当分页、排序、过滤发生的时候，都会调用LazyDataModel的load方法。</p>
+<p>需要实现选择的话，还要覆盖（override）SelectableDataModel的<code>public T getRowData(String)</code>和<code>public Object getRowKey(T)</code>。相当于根据rowKey字符串找rowData和根据rowData得到rowKey字符串。关于选择，参见文档：<a href="https://primefaces.github.io/primefaces/10_0_0/#/components/datatable?id=row-selection" class="uri">https://primefaces.github.io/primefaces/10_0_0/#/components/datatable?id=row-selection</a>。</p>
+<p>这里加<code>lazy="true"</code>。</p>
+<pre class="xhtml"><code>&lt;p:dataTable var=&quot;car&quot; value=&quot;#{carBean.model}&quot; paginator=&quot;true&quot; rows=&quot;10&quot; lazy=&quot;true&quot;&gt;
+   //columns
+&lt;/p:dataTable&gt;</code></pre>
+<figure>
+<img src="PrimeFaces%20LazyDataModel.png" alt="org.primefaces.model.LazyDataModel" /><figcaption aria-hidden="true">org.primefaces.model.LazyDataModel</figcaption>
+</figure>
+<p>这里要用LazyDataModel。</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CarBean <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 这个model是dataTable的value绑定的值</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> LazyDataModel model<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 也可以是更精确的LazyDataModel&lt;Car&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">CarBean</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> <span class="kw">new</span> <span class="fu">LazyDataModel</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 每当有分页、排序、过滤发生的时候都会调用load</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">@Override</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">public</span> <span class="bu">List</span><span class="op">&lt;</span>Car<span class="op">&gt;</span> <span class="fu">load</span><span class="op">(</span><span class="dt">int</span> first<span class="op">,</span> <span class="dt">int</span> pageSize<span class="op">,</span> <span class="bu">String</span> sortField<span class="op">,</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                             <span class="bu">SortOrder</span> sortOrder<span class="op">,</span> <span class="bu">Map</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">Object</span><span class="op">&gt;</span> filters<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 加载数据</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                <span class="bu">List</span><span class="op">&lt;</span>Car<span class="op">&gt;</span> data <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                <span class="co">// ...</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                <span class="co">// 设置总行数</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                model<span class="op">.</span><span class="fu">setRowCount</span><span class="op">(</span>data<span class="op">.</span><span class="fu">size</span><span class="op">());</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> data<span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">@Override</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="kw">public</span> Car <span class="fu">getRowData</span><span class="op">(</span><span class="bu">String</span> rowKey<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                <span class="co">// ...</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>            <span class="at">@Override</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>            <span class="co">// 这个返回的Object当然可以直接是String，否则PrimeFaces可能会用toString等方法得到一个String</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>            <span class="kw">public</span> <span class="bu">Object</span> <span class="fu">getRowKey</span><span class="op">(</span>Car rowData<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                <span class="co">// ...</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="op">};</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </body>
 </html>

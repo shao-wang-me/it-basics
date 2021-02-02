@@ -43,11 +43,11 @@ function getName(md) {
 }
 
 
-let [, , rootDir, outputFile, fileTitle] = process.argv;
+let [, , rootDir, outputFile, fileTitle, verbose] = process.argv;
 rootDir = fs.opendirSync(rootDir ? rootDir : './');
 console.log(`Generating TOC for directory "${rootDir.path}".`);
 const toc = walk(rootDir);
-console.log(toc);
+if (verbose) console.log(toc);
 if (outputFile) {
     console.log(`Writing TOC to "${outputFile}".`)
     if (fileTitle) {

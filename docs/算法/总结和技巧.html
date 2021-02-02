@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Parallel Computing</title>
+  <title>总结和技巧</title>
   <style>
     html {
       line-height: 1.5;
@@ -156,20 +156,68 @@
     </nav>
 </header>
 <header id="title-block-header">
-<h1 class="title">Parallel Computing</h1>
+<h1 class="title">总结和技巧</h1>
 </header>
+<h1 data-number="1" id="一般步骤"><span class="header-section-number">1</span> 一般步骤</h1>
 <ol type="1">
-<li><p>What is parallel computing?</p></li>
-<li><p>What is concurrent?</p></li>
-<li><p>What is multi-threading?</p></li>
-<li><p>What is distributed computing?</p></li>
-<li><p>What is grid computing?</p></li>
-<li><p>What is edge computing?</p></li>
-<li><p>What is a computer cluster?</p></li>
-<li><p>What is a process?</p></li>
-<li><p>What is a thread?</p></li>
-<li><p>What is an operating system kernel?</p></li>
-<li><p>What types of kernel are there?</p></li>
+<li>读懂题目
+<ul>
+<li>确定输入、输出</li>
+<li>确认输入值的范围、条件</li>
+</ul></li>
+<li>思路
+<ul>
+<li>想一下大致思路</li>
+<li>分析时空复杂度，注意递归的栈 stack 空间</li>
+<li>分类列举各种情况（含边缘条件）</li>
+<li>还有没有更好的方法</li>
+<li>复杂的情况要列举</li>
+<li>跑一下例子，看思路对不对</li>
+<li>这个时候思路不清楚、不跑一下、不想全情况的话，写了错误的代码再改就难了！</li>
+</ul></li>
+<li>写代码
+<ul>
+<li>不一定按顺序，可以先搭个大框架、步骤，再填充细节</li>
+</ul></li>
+<li>检查
+<ul>
+<li>厘清容易错的循环判断条件等</li>
+<li>白板的话要自己手动跑一遍</li>
+<li>再确认一下复杂度</li>
+</ul></li>
+<li>分析总结
+<ul>
+<li>可能的缺陷、改进</li>
+<li>更好的办法</li>
+</ul></li>
 </ol>
+<h1 data-number="2" id="tips"><span class="header-section-number">2</span> Tips</h1>
+<ol type="1">
+<li><p>Logarithm (对数)</p>
+<p>log<sub>10</sub>(x) = ln(x) / ln(10)</p>
+<p>log<sub>a</sub>(b) = ln(b) / ln(a)</p>
+<p>log(a * b) = log(a) + log(b)</p>
+<p>log(a / b) = log(a) - log(b)</p></li>
+<li><p>How many digits does a number have?</p>
+<p>For positive integers, <code>floor(log10(n)) + 1</code>.</p>
+<p>For all integers?</p>
+<pre><code>function number_of_digits(n):
+  if n = 0:
+    return 1
+  else:
+    return floor(log10(abs(n))) + 1</code></pre></li>
+<li><p>When using two pointers, what would the index of the number we need to fill given the pointers’ indices as <code>l</code> and <code>r</code>, if we are filling numbers from the start or from the end respectively?</p>
+<p><strong>Forward:</strong> It would be <code>n - 1 + l - r</code> because there are <code>l + (n - 1 - r) = n - 1 + l - r</code> numbers already filled, and the next number is at index <code>n - 1 + l - r</code>.</p>
+<p><strong>Backward:</strong> It would be <code>r - l</code> because there are <code>r - l + 1</code> numbers waiting to be filled and the <code>r - l + 1</code>th number is at index <code>r - l</code>.</p>
+<p>You can use a variable to track it if you don’t remember.</p></li>
+<li><p>When using two pointers, it is good to maintain a meaning of the pointers. For example, <code>l</code> is the next the position to write, <code>r</code> is the biggest number when have found so far. It makes the code meaningful and often simpler.</p></li>
+<li><p>When the algorithm needs to manually handle many edge cases, your idea might be wrong.</p></li>
+</ol>
+<h1 data-number="3" id="他山之石"><span class="header-section-number">3</span> 他山之石</h1>
+<ul>
+<li>鲂的2021秋招算法总结：<a href="https://leetcode-cn.com/circle/discuss/VFVW01/" class="uri">https://leetcode-cn.com/circle/discuss/VFVW01/</a></li>
+<li>请问刷多少题才能达到找工作的基础线？：<a href="https://leetcode-cn.com/circle/discuss/TptPlE/" class="uri">https://leetcode-cn.com/circle/discuss/TptPlE/</a></li>
+<li>「春招学习计划」 周常总结 Week 2：<a href="https://leetcode-cn.com/circle/discuss/Tc8aM4/" class="uri">https://leetcode-cn.com/circle/discuss/Tc8aM4/</a></li>
+</ul>
 </body>
 </html>

@@ -1,4 +1,0 @@
-# Prevent GitHub Pages' Jekyll from processing Markdown files
-# as it might complain things similar to Liquid.
-exclude:
-  - "*.md"

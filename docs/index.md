@@ -9,6 +9,7 @@
 - [基础](基础.html)
 - 工具
   - 数据库
+    - [PostgreSQL](工具/数据库/PostgreSQL.html)
     - [Redis](工具/数据库/Redis.html)
   - 杂项
     - [git](工具/杂项/git.html)
@@ -17,11 +18,13 @@
   - 流
     - flink
       - [flink](工具/流/flink/flink.html)
+  - 用户界面
+    - [中英混排](工具/用户界面/中英混排.html)
   - 语言
     - java
       - [java](工具/语言/java/java.html)
       - [jpa](工具/语言/java/jpa.html)
-      - [jsf](工具/语言/java/jsf.html)
+      - [JSF](工具/语言/java/JSF.html)
       - [maven](工具/语言/java/maven.html)
     - javascript
       - [npm](工具/语言/javascript/npm.html)
@@ -32,7 +35,7 @@
   - [流](流/流.html)
 - 算法
   - [LC刷题](算法/LC刷题.html)
-  - [技巧](算法/技巧.html)
+  - [总结和技巧](算法/总结和技巧.html)
   - [数学](算法/数学.html)
   - 数据结构
     - trees
