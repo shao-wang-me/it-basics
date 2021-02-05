@@ -16,21 +16,21 @@
     - static-site-generators
       - [jekyll](工具/杂项/static-site-generators/jekyll.html)
   - 流
-    - flink
-      - [flink](工具/流/flink/flink.html)
+    - Flink
+      - [Flink](工具/流/Flink/Flink.html)
   - 用户界面
     - [中英混排](工具/用户界面/中英混排.html)
   - 语言
-    - java
-      - [java](工具/语言/java/java.html)
-      - [jpa](工具/语言/java/jpa.html)
-      - [JSF](工具/语言/java/JSF.html)
-      - [maven](工具/语言/java/maven.html)
-    - javascript
-      - [npm](工具/语言/javascript/npm.html)
-      - [react](工具/语言/javascript/react.html)
-    - xml
-      - [xml](工具/语言/xml/xml.html)
+    - Java
+      - [Java](工具/语言/Java/Java.html)
+      - [JPA](工具/语言/Java/JPA.html)
+      - [JSF](工具/语言/Java/JSF.html)
+      - [maven](工具/语言/Java/maven.html)
+    - JavaScript
+      - [npm](工具/语言/JavaScript/npm.html)
+      - [react](工具/语言/JavaScript/react.html)
+    - XML
+      - [XML](工具/语言/XML/XML.html)
 - 流
   - [流](流/流.html)
 - 算法

@@ -1,6 +1,6 @@
 # Java Persistence API (JPA)
 
-1. What is JPA?
+1. 什么是JPA?
 
    JPA is a part of Jakarta EE (formerly Java EE, EE stands for Enterprise Edition). It provides ORM (object-relational mapping).
 

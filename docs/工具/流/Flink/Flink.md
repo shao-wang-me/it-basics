@@ -1,9 +1,5 @@
 # Apache Flink
 
-Hi \ how are you?
-
-Hi \\ how are you?
-
 Reference: <https://flink.apache.org/>
 
 ## Concepts
@@ -174,7 +170,7 @@ digraph flink {
 
    In `DataStream<T>`, `T` can be anything Java can serialise.
    
-   Flink has its own serializer which is used for basic types (`String`, `Boolean`, `Integer`, `Long` and `Array`) and composite types (Flink's own `Tuple0` - `Tuple25` and [POJOs](file:///C:/Users/ws/Downloads/apache_flink_doc/ci.apache.org/projects/flink/flink-docs-release-1.12/learn-flink/datastream_api.html#pojos)).
+   Flink has its own serializer which is used for basic types (`String`, `Boolean`, `Integer`, `Long` and `Array`) and composite types (Flink's own `Tuple0` - `Tuple25` and [POJOs](https://ci.apache.org/projects/flink/flink-docs-stable/dev/types_serialization.html#pojos)).
 
    For other types, Flink falls back to use Kryo. You can use other serializers such as Avro.
 
@@ -206,3 +202,21 @@ digraph flink {
 1. Does Flink have a REST API?
 
    Yes. By default, the API is exposed at <http://localhost:8081/> as well. For example, <http://localhost:8081/jobs> list all the jobs.
+
+1. 怎么在Windows上运行Flink？
+
+   Flink在1.9还是1.10左右的版本移除了batch脚本，推荐使用Cygwin，试了下没成功，还是用的WSL。WSL的话要注意WSL2读取挂载的Windows文件系统的IO性能是很差的，最好是所有文件都在Linux内。我试了一个简单的程序，挂载Windows文件跑了26多分钟，直接在Linux跑是2分钟。
+
+
+## 性能测试
+
+- 雅虎：<https://github.com/yahoo/streaming-benchmarks>，<https://developer.yahoo.com/blogs/135370591481/>。很可惜，目前（2021年2月5日）项目存在不少issue。
+- Flink原开发者公司对雅虎评测的后续回应：<https://www.ververica.com/blog/extending-the-yahoo-streaming-benchmark>，<https://www.ververica.com/blog/curious-case-broken-benchmark-revisiting-apache-flink-vs-databricks-runtime>
+- Apache：<https://github.com/apache/flink-benchmarks>
+
+## 文章、演讲
+
+- Run Interactive Queries with Apache Flink - Jiangjie Qin：<https://youtu.be/5Pgcw0orvLg>
+- 流计算框架 Flink 与 Storm 的性能对比：<https://tech.meituan.com/2017/11/17/flink-benchmark.html>
+- 数据不撒谎，Flink-Kafka性能压测全记录！：<https://blog.csdn.net/u013411339/article/details/100029388>
+- 如何分析及处理 Flink 反压？：<https://developer.aliyun.com/article/727389>

@@ -59,3 +59,10 @@
 1. Can `int[]` be `null`?
 
    Yes. `int[] array;  // array ==> null`.
+
+
+## 杂项
+
+1. Linux（Ubuntu、Debian）切换Java版本
+
+<https://askubuntu.com/a/740782/945748>
