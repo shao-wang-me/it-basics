@@ -10,6 +10,8 @@ class Node:
         return self.label
 
 
+# 两种pop的策略
+
 def dfs_connected_iterative(graph: [Node]) -> [Node]:
     # 迭代 iterative
     # 时间：O(n^2)或者更准确说是Θ(e) ⊆ O(n^2)

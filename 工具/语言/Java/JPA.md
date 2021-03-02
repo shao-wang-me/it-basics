@@ -89,35 +89,35 @@ public class Customer implements Serializable {
 
 > 注：这里的讨论全都忽略了@Embeddable和复合主键，太麻烦，需要的话再看文档。继承也不在此详述。
 
-### 访问类型
+## 实体属性 Attributes
 
-这里的访问类型指的是JPA provider是直接访问field还是property。除非标为`@Transient`，所有field或者property都会被persist。
+Field或者property，[不标注的话默认是`@Basic`][Attribute的默认标注]。
+
+### JPA provider访问类型
+
+这里的访问类型指的是JPA provider是直接访问field还是property。除非标为`@Transient`，所有field或者property都会被persist。选择任一访问类型皆可，视具体需求而定。
 
 ### 主键、ID
 
 简单主键是最容易的，直接加`@Id`即可。复合主键很麻烦，尽量不要用。
 
-### 属性 Attributes
-
-Field或者property，[不标注的话默认是`@Basic`][Attribute的默认标注]，如果是
-
 ### 集合 Collections
 
-一个attribute可以是一个集合，这个集合要么是普通元素，如果不是别的entity的话，就得mark为@ElementCollection，数据存在某个表里。如果是entity的话，则用@OneToMany或@ManyToMany。
+一个attribute可以是一个集合，这个集合要么是普通元素，如果不是entity的话，就得mark为@ElementCollection，数据存在某个表里。如果是entity的话，则用@OneToMany或@ManyToMany。
 
-#### Map
+#### [Map集合]
 
-无论是普通元素还是entity，我们都可以把这样的集合看成是一个map，在本entity中的我们只有map的key，实际的value是在另外一个table中或者是另外一个entity。Entity的话，key就是外键。 这样子的map只能在这一侧使用。
+无论是集合元素普通元素还是entity，我们都可以用`java.util.Map`而不仅仅是Collection来表示。这样我们就可以快速地根据主键或者其它属性获取需要的元素。
 
-##### Key
+以entity为例，本来写作`Collection<Book> books`的现在可以写为`Map<String, Book> books`，其中key可以是Book的@Id，也可以是别的attribute。
 
-如果map的key是基础类型，可以用@MapKeyColumn标注哪一列是该key。如果key是个entity，则用@MapKeyJoinColumn或@MapKeyJoinColumn。如果不是用generics的话，要用@MapKeyClass标注数据类型。
+如果map的key是基础类型，可以用@MapKeyColumn标注哪一列是该key。如果key是个entity，则用@MapKeyJoinColumn或@MapKeyJoinColumns。如果不是用generics的话，要用@MapKeyClass标注数据类型。
 
-##### Value
+如果map的key是map的value的主键或某个attribute，则可以直接用@MapKey标注。
 
-如果value是基础类型，要用一个@CollectionTable来map，如果没用泛型，要在@ElementCollection中用targetClass说明数据类型。
+如果value是基础类型，要用一个@CollectionTable。
 
-如果value是entity，则对于@ManyToMany使用一个join表，对unidirectional的@OneToMany默认也使用一个join表。如果@ManyToOne或@OneToMany是bidirectional的，则默认不需要join表。和上述类似，如果不用泛型，则在@OneToMany或@ManyToMany标注中用targetClass说明类型。
+如果value是entity，则对于@ManyToMany使用一个join表，对unidirectional的@OneToMany默认也使用一个join表。如果@ManyToOne或@OneToMany是bidirectional的，则默认不需要join表。
 
 ### 实体关系 Entity Relationships
 
@@ -142,7 +142,7 @@ Field或者property，[不标注的话默认是`@Basic`][Attribute的默认标�
 | @ManyToOne |
 | @ManyToMany | | 要有join表 |
 
-> 只有保存拥有关系的一方时，改变才会被cascade到另一方。
+> 只有保存拥有关系的一方时，改变才会被cascade到另一方。见[3.2.4. Synchronization to the Database](https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html#a1955)。
 > 
 > It is particularly important to ensure that changes to the inverse side of a relationship result in appropriate updates on the owning side, so as to ensure the changes are not lost when they are synchronized to the database.
 
@@ -218,13 +218,41 @@ public class Employee { // 默认表是EMPLOYEE
 }
 ```
 
-## 实体操作 Entity Operations
+## [实体实例生命周期 Entity Instance's Life Cycle][实体实例生命周期]
 
-### EntityManager
+任何一个entity实例都属于以下四种状态之一。
 
-一个EntityManager是关联一个persistence context的。
+1. 新建的 new
+1. 被管理的 managed
+1. 脱离的 detached
+1. 已移除的 removed
 
-使用样例：
+| 生命周期 | Persistence Identity | Persistence Context | 备注 |
+| --- | --- | --- | --- |
+| New | 无 | 无 | 新建的 |
+| Manged | 有 | 有 |
+| Detached | 有 | 无 |
+| Removed | 有 | 有 | Transaction提交时将移除 |
+
+```mermaid
+stateDiagram-v2
+    [*] --> new : new Book()
+    new --> managed: persist()
+    managed --> managed: persist()
+    removed --> managed: persist()
+    new --> new: remove()
+    managed --> removed: remove()
+```
+
+注意，persist()和remove()会根据cascade类型处理引用的entity。
+
+![JPA实体生命周期图](https://www.objectdb.com/files/images/manual/jpa-states.png)
+
+## 实体管理器 EntityManager
+
+一个EntityManager对应一个persistence context的。
+
+使用示例：
 
 ```java
 @Stateless
@@ -241,33 +269,25 @@ public class OrderEntryBean implements OrderEntry {
 }
 ```
 
-### 实体实例生命周期 Entity Instance's Life Cycle
+## 持久化境 Persistence Context
 
-任何一个entity实例都属于以下四种状态之一。
+> A persistence context is a set of managed entity instances in which for any persistent entity identity there is a unique entity instance. Within the persistence context, the entity instances and their lifecycle are managed by the entity manager.
 
-1. 新建的 new
-1. 被管理的 managed
-1. 脱离的 detached
-1. 已移除的 removed
+## 实体打包 Entity Packaging
 
-| 生命周期 | Persistence Identity | Persistence Context | 备注 |
-| --- | --- | --- | --- |
-| New | 无 | 无 | 新建的 |
-| Manged | 有 | 有 |
-| Detached | 有 | 无 |
-| Removed | 有 | 有 | Transaction提交时将移除 |
+### [持久化单位 Persistence Unit][Persistence Unit]
 
-![JPA实体生命周期图](https://www.objectdb.com/files/images/manual/jpa-states.png)
+持久化单位一个在在逻辑上grouping：
 
+1. 实体管理器工厂和实体管理器，及它们的配置信息
+1. Managed类
+1. 映射元数据（Java标注或XML）
 
-```puml
-@startuml
-digraph {
-a -> b
-b -> c
-}
-@enduml
-```
+### `persistence.xml`
+
+一个持久化单位是定义在一个`persistence.xml`中的，一个`persistence.xml`可以有多个持久化单位。
+
+`persistence.xml`放在META-INF目录中。
 
 
 
@@ -275,6 +295,10 @@ b -> c
 
 
 
+
+
+
+---------------
 
 ## API
 
@@ -352,3 +376,6 @@ If the JoinTable has more columns other than A and B's ids, you can fallback and
 [Attribute的默认标注]: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html#a511
 [JPA 3.0规范文件，2020年9月8日]: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html
 [JPA 3.0规范PDF版本]: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.pdf
+[实体实例生命周期]: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html#a1929
+[Map集合]: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html#map-collections
+[Persistence Unit]: https://jakarta.ee/specifications/persistence/3.0/jakarta-persistence-spec-3.0.html#persistence-unit

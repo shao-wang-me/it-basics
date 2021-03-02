@@ -109,6 +109,10 @@
 [git-quick-stats](https://github.com/arzzen/git-quick-stats)
 
 ```shell
+# Install
+apt install git-quick-stats
+
+# Statistics
 export _GIT_SINCE="2021-01-16"
 git quick-stats -T
 ```
