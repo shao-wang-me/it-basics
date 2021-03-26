@@ -70,3 +70,5 @@ public class CarBean {
     }
 }
 ```
+
+TODO ?faces-redirect=true是什么？
