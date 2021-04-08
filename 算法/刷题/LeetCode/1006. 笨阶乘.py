@@ -50,6 +50,8 @@
 
 # 数学化简，我的方法见 笨阶乘.png
 
+# 官方解法还有一个栈的解法。
+
 
 class Solution:
     def clumsy_作弊(self, N: int) -> int:
