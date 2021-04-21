@@ -28,6 +28,13 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: 切换至白天模式
+  icon:
+    logo: material/school
+    repo: fontawesome/brands/github
+  favicon: 'https://cdn.jsdelivr.net/npm/oicdn@0.0.1/favicon.ico'
 
 # 严格模式，不能有warning
 strict: true
+
+# 隐藏编辑按钮
+edit_uri: ''
