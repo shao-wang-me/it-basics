@@ -1,0 +1,33 @@
+# 基本信息
+site_name: IT 基础
+site_description: 理论、概念和工程实践
+
+# 代码仓库信息
+repo_url: https://github.com/shao-wang-me/it-basics
+
+# 版权
+copyright: 'Copyright &copy; 2021 Shao Wang'
+
+# 主题
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.top
+  palette:
+    - scheme: default
+      primary: white
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: 切换至黑夜模式
+    - scheme: slate
+      primary: black
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch
+        name: 切换至白天模式
+
+# 严格模式，不能有warning
+strict: true
