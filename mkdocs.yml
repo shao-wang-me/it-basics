@@ -6,7 +6,7 @@ site_description: 理论、概念和工程实践
 repo_url: https://github.com/shao-wang-me/it-basics
 
 # 版权
-copyright: 'Copyright &copy; 2021 Shao Wang'
+copyright: 'Copyright © 2021 Shao Wang'
 
 # 主题
 theme:

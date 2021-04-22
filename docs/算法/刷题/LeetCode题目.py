@@ -2,6 +2,9 @@ from math import inf
 from os import listdir
 from os.path import isfile, join
 
+# TODO 移动到外面，构建的时候自动生成LeetCode.md
+# TODO 包含到代码的链接
+
 leetcode_path = 'LeetCode'
 
 markdown = '''# LeetCode题目
