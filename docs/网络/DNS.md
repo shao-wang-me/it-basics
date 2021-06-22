@@ -1,10 +1,20 @@
-# DNS
+# DNS 域名系统
 
-1. What is DNS?
+DNS（Domain Name System），域名系统是一个应用层的系统。它既是一个分布式系统，也可以看作一个协议。
 
-    DNS is Domain Name System.
+## DNS 记录
 
-1. Is DNS a protocol or a distributed system?
+[DNS 域名解析中 A、AAAA、CNAME、MX、NS、TXT、SRV、SOA、PTR 各项记录的作用 | IT 笔录](https://itbilu.com/other/relate/EyxzdVl3.html)
+
+比如对 shaowang.me，常用的记录类型有：
+
+| 类型 | 意义 |
+| --- | --- |
+| A | IPv4 地址 |
+| AAAA | IPv6 地址 |
+| CNAME | 指向另一个域名，比如说 shao-wang-me.github.io，这样访问 shaowang.me 就和访问后者一样，但是在地址栏还是 shaowang.me |
+| MX | 邮箱服务器 |
+
 
 1. Which transport layer protocol does DNS use?
 

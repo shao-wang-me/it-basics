@@ -1,6 +1,6 @@
 # Drools
 
-Drools是RetHat旗下KIE Group开发的，KIE的意思是Knowledge Is Everything。
+Drools 是 RetHat 旗下 KIE Group 开发的规则引擎，KIE 的意思是 Knowledge Is Everything。
 
 KIE有好几个项目，如下：
 

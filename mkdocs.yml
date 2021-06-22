@@ -38,3 +38,8 @@ strict: true
 
 # 隐藏编辑按钮
 edit_uri: ''
+
+# 代码高亮
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences

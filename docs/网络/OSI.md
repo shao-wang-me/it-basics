@@ -1,1 +1,1 @@
-# OSI Modal
+# OSI Model
