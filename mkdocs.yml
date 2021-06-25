@@ -1,6 +1,7 @@
 # 基本信息
 site_name: IT 基础
 site_description: 理论、概念和工程实践
+site_url: https://www.shaowang.me/it-basics
 
 # 代码仓库信息
 repo_url: https://github.com/shao-wang-me/it-basics
