@@ -1,0 +1,8 @@
+tasks:
+- init: pip install mkdocs
+  command: mkdocs serve --dev-addr localhost:8888
+ports:
+- port: 8888
+gitConfig:
+  user.name: Shao Wang
+  user.email: shao.wang.me@gmail.com
