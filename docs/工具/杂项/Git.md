@@ -1,4 +1,4 @@
-# Git
+# Git 和项目代码分析
 
 Git 是一个版本控制系统，对纯文本（代码等）有很好的支持。
 
@@ -116,4 +116,18 @@ brew install git-quick-stats
 # Statistics
 export _GIT_SINCE="2021-01-16"
 git quick-stats --detailed-git-stats
+```
+
+### 代码行数分析
+
+[Cloc](https://github.com/AlDanial/cloc)
+
+```shell
+# 安装
+sudo apt install cloc
+brew install cloc
+# 统计行数
+cloc .
+cloc <some_folder>
+cloc <some_file>
 ```
