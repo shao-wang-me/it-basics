@@ -118,6 +118,13 @@ export _GIT_SINCE="2021-01-16"
 git quick-stats --detailed-git-stats
 ```
 
+### Git 总 commit 数
+
+```shell
+git rev-list --count HEAD
+git rev-list --count main
+```
+
 ### 代码行数分析
 
 [Cloc](https://github.com/AlDanial/cloc)

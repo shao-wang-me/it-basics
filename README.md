@@ -4,7 +4,7 @@ MkDocs + Material 主题
 
 ```shell
 # 开发服务器
-mkdocs serve --dev-addr 0.0.0.0:8000
+mkdocs serve --dev-addr localhost:8888
 # 构建
 mkdocs build
 # 发布到 GitHub Pages
