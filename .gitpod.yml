@@ -7,3 +7,6 @@ ports:
 gitConfig:
   user.name: Shao Wang
   user.email: shao.wang.me@gmail.com
+vscode:
+  extensions:
+    - ms-python.python
