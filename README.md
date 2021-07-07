@@ -2,13 +2,8 @@
 
 MkDocs + Material 主题
 
-```shell
-# 开发服务器
-mkdocs serve --dev-addr localhost:8888
-# 构建
-mkdocs build
-# 发布到 GitHub Pages
-mkdocs gh-deploy
-```
+只需提交 `main` 分支，会自动发布在 GitHub Pages 上。自动发布用的是 GitHub Actions，见 `.github/workflows`。
 
-GitHub Pages 已经用 GitHub Actions 自动发布了，所以只需要本地开发的时候用 `mkdocs serve` 就行了。
+可以在 Gitpod 中开发，已经配置了 `.gitpod.yml`，只需打开 <https://gitpod.io/#https://github.com/shao-wang-me/it-basics>。
+
+也可以本地开发：`mkdocs serve --dev-addr localhost:8888`。
