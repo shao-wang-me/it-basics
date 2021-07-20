@@ -133,8 +133,10 @@ git rev-list --count main
 # 安装
 sudo apt install cloc
 brew install cloc
+
 # 统计行数
 cloc .
 cloc <some_folder>
 cloc <some_file>
+cloc --exclude-dir=<dir1>,<dir2> <some_folder>
 ```
