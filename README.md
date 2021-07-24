@@ -1,5 +1,8 @@
 # IT 基础
 
+![GitHub Pages](https://github.com/shao-wang-me/it-basics/actions/workflows/gh_pages.yml/badge.svg)
+![CodeQL](https://github.com/shao-wang-me/it-basics/actions/workflows/codeql-analysis.yml/badge.svg)
+
 MkDocs + Material 主题
 
 只需提交 `main` 分支，会自动发布在 GitHub Pages 上。自动发布用的是 GitHub Actions，见 `.github/workflows`。
