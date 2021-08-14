@@ -1,4 +1,6 @@
-# Node Package Manager (NPM)
+# NPM
+
+Node Package Manager (NPM)
 
 1. How to list global packages?
 

@@ -11,9 +11,9 @@ Redux 是一个 JavaScript 的全局状态管理器。虽然主要是和 React �
 ## Redux 相关包和工具
 
 1. Redux Core: `redux`
-1. Redux Toolkit: `@reduxjs/toolkit`
+1. Redux Toolkit: `@reduxjs/toolkit`，包含 Redux Core、Redux Thunk 和 Reselect，所以可以只添加这一个依赖
 1. React-Redux: `react-redux`
-1. Redux DevTools Extension： <https://github.com/zalmoxisus/redux-devtools-extension>
+1. [Redux 浏览器扩展](https://github.com/zalmoxisus/redux-devtools-extension)
 
 ## [拆解正常 React 组件](https://redux.js.org/tutorials/essentials/part-1-overview-concepts#state-management)
 
@@ -24,6 +24,8 @@ Redux 是一个 JavaScript 的全局状态管理器。虽然主要是和 React �
 1. 动作：更新状态
 
 ![React拆解](React拆解.png)
+
+_注：图来自 Redux 官方文档_
 
 但是当多个组件需要共享组件时，就不这么优雅了，Redux 试图使用一个全局状态来解决问题。
 

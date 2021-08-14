@@ -1,18 +1,20 @@
-# JavaScript
+# 基础
 
 [JavaScript 指南 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/orphaned/Web/JavaScript/Guide)
 
-1. 闭包
-    1. 全局
-    1. 作用域
-1. 异步
-    1. `setTimeOut`、`setInterval`
-    1. AJAX
-    1. `Promise`
-    1. `async`、`await`
-    1. 异步机制
-1. 线程机制
-1. TypeScript
+## 需要学习
+
+> 1. 闭包
+>     1. 全局
+>     1. 作用域
+> 1. 异步
+>     1. `setTimeOut`、`setInterval`
+>     1. AJAX
+>     1. `Promise`
+>     1. `async`、`await`
+>     1. 异步机制
+> 1. 线程机制
+> 1. TypeScript
 
 
 ## 作用域

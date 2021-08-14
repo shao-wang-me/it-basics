@@ -10,3 +10,8 @@ MkDocs + Material 主题
 可以在 Gitpod 中开发，已经配置了 `.gitpod.yml`，只需打开 <https://gitpod.io/#https://github.com/shao-wang-me/it-basics>。
 
 也可以本地开发：`mkdocs serve --dev-addr localhost:8888`。
+
+---
+
+- 项目代码：<https://github.com/shao-wang-me/it-basics>
+- 网站：<https://shaowang.me/it-basics/>
