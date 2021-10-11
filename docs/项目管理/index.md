@@ -1,4 +1,6 @@
-# 项目管理 Project Management
+# 项目管理
+
+Project Management
 
 ## 内容
 
@@ -7,6 +9,7 @@
    2. CAC: customer acquisition cost
    3. LTV: lifetime value (of a customer)
    4. PLG: product-led growth
+2. 增长 vs 风险
 
 ## 常见会议类型（英语世界）
 
