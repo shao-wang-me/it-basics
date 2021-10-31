@@ -1,39 +1,29 @@
 # HTTP
 
-1. What is HTTP?
+HyperText Transfer Protocol，超文本传输协议，是一个应用层协议。要求传输层协议是可靠的，但不一定是有连接的，通常使用 TCP。HTTP 本身是无状态的，但是可以有 cookie 控制的 session。
 
-    HTTP stands for HyperText Transfer Protocol, specified in RFC 2616, is a simple request-response application layer protocol.
+## HTTP 方法（Method）
 
-1. Which transport layer protocol does HTTP use?
+| Method | 描述 |
+| --- | --- |
+| GET | 获取资源 |
+| HEAD | 只获取 response 的 header |
+| POST | 发送信息 |
+| PUT | 替换资源 |
+| DELETE | 删除资源 |
+| TRACE | 让服务器 echo 发送的 request |
+| CONNECT | 通过一个代理服务器连接 |
+| OPTIONS | 询问可用的方法 |
 
-    It normally uses TCP but can use any suitable protocol. The protocol should be reliable, meaning it doesn't lose messages silently (such as UDP).
+## 缓存
 
-1. What encoding is used by HTTP?
+## Authentication
 
-    The request and response headers are encoded in ASCII.
-    
-    TODO: Payload encoding?
+`WWW-Authenticate` 及类似的 header，或者用 cookies 实现。
 
-1. Which port does HTTP use?
+## Origin control
 
-    It can use any port but 80 is the most common port. Web browsers hide the port when it's 80.
 
-1. What are the common methods in HTTP?
-
-    | Method  | Description                             |
-    | ------- | --------------------------------------- |
-    | GET     | Get a resource.                         |
-    | HEAD    | The response will only have the header. |
-    | POST    | Send some information.                  |
-    | PUT     | Replace a resource.                     |
-    | DELETE  | Delete a resource.                      |
-    | TRACE   | Echo the incoming request.              |
-    | CONNECT | CONNECT through a proxy.                |
-    | OPTIONS | Query options for a resource.           |
-
-1. Are methods in HTTP case sensitive?
-
-    Yes.
 
 1. What is the difference between PUT and POST?
 

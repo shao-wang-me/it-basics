@@ -1,5 +1,3 @@
 # TCP
 
-1. What is TCP?
-
-   TCP is Transport Control Protocol.
+Transport Control Protocol，传输控制协议。
