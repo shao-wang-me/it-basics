@@ -2,6 +2,15 @@
 
 HyperText Transfer Protocol，超文本传输协议，是一个应用层协议。要求传输层协议是可靠的，但不一定是有连接的，通常使用 TCP。HTTP 本身是无状态的，但是可以有 cookie 控制的 session。
 
+## Request / Response 格式
+
+```http
+GET https://example.com HTTP/1.1
+Host: example.com
+
+This is body.
+```
+
 ## HTTP 方法（Method）
 
 | Method | 描述 |
@@ -16,6 +25,20 @@ HyperText Transfer Protocol，超文本传输协议，是一个应用层协议�
 | OPTIONS | 询问可用的方法 |
 
 ## 缓存
+
+缓存可以存在于请求发起到请求处理中间的任何环节：浏览器、本地电脑、ISP、负载均衡等。
+
+相关 heaer：`Cache-Control``Expires` TODO
+
+### `revving`
+
+为了解决缓存过期时间长和需要不定期更新的矛盾，把每个资源都加上一个版本号或者一个 hash，而在 `index.html` 这种缓存过期时间短或者不允许缓存的页面中指向这些资源。对于 CSS 和 JavaScript 文件，这样还能消灭依赖问题。
+
+[Caching Headers - Supercharged - YouTube](https://www.youtube.com/watch?v=aN8wMQVaNvs)
+
+## Cookie
+
+服务器设置 `Set-Cookie`，则浏览器会保存该 cookie，后续所有向该 domain 的请求都会通过 `Cookie` 发送所有 cookie。
 
 ## Authentication
 
