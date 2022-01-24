@@ -34,7 +34,13 @@ This is body.
 
 为了解决缓存过期时间长和需要不定期更新的矛盾，把每个资源都加上一个版本号或者一个 hash，而在 `index.html` 这种缓存过期时间短或者不允许缓存的页面中指向这些资源。对于 CSS 和 JavaScript 文件，这样还能消灭依赖问题。
 
+很多构建工具已经实现了这个（怪不得看构建出来的都是有hash一样的编码在文件名里）。
+
 [Caching Headers - Supercharged - YouTube](https://www.youtube.com/watch?v=aN8wMQVaNvs)
+
+### GitHub Pages
+
+看了一下GitHub Pages，他们统一设置所有资源都是`cache-control: max-age=600`，且目前没有更改这个设置的办法。
 
 ## Cookie
 
@@ -45,6 +51,10 @@ This is body.
 `WWW-Authenticate` 及类似的 header，或者用 cookies 实现。
 
 ## Origin control
+
+
+## 状态码
+
 
 
 
