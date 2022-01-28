@@ -1,5 +1,7 @@
 # Radio Button
 
+此处展示如何使用和 style Radio 按钮。
+
 <fieldset>
   <label>
     <input type="radio" name="季节"/>

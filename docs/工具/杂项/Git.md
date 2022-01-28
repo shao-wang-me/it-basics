@@ -102,7 +102,7 @@ Display Name <Commit Name> <commit@email>  # Replace name
 Display Name <display@email> Commit Name <commit@email>  # Replace both
 ```
 
-## 其它
+## 工具
 
 ### Git 统计
 
@@ -139,4 +139,18 @@ cloc .
 cloc <some_folder>
 cloc <some_file>
 cloc --exclude-dir=<dir1>,<dir2> <some_folder>
+```
+
+### 搜索历史文件文本
+
+https://git-scm.com/book/en/v2/Git-Tools-Searching
+
+```
+# 只能搜索某个 revision
+git grep [<options>] [-e] <pattern> [<rev>...] [[--] <path>...]
+git grep "Shao Wang" master
+
+# 可以搜索整个历史
+git log [<options>] [<revision-range>] [[--] <path>...]
+git log -S "Shao Wang"
 ```
