@@ -14,3 +14,8 @@
 
 1. How does a HTTP proxy server work?
 
+[Proxy server types - Cybersecurity Guide](https://cysecguide.blogspot.com/2018/05/proxy-server-types.html)
+
+![](reverse+proxy+and+forward+proxy.png)
+
+正向代理、反向代理、透明代理、匿名代理
